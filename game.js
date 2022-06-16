@@ -26,20 +26,20 @@ var caja2Alto = 20;
 //Cajas end
 
 // ponke 1
-var ponkeX= 350;
-var ponkeY = 150;
+var ponkeX = 850;
+var ponkeY = Math.random() * 500 + 100;
 var ponkeAncho = 50;
 var ponkeAlto = 50;
 
 // ponke 2
-var ponke2X= 550;
-var ponke2Y = 100;
+var ponke2X= 830;
+var ponke2Y = Math.random() * 500 + 100;
 var ponke2Ancho = 50;
 var ponke2Alto = 50;
 
 // ponke 3
-var ponke3X= 50;
-var ponke3Y = 300;
+var ponke3X= 870;
+var ponke3Y = Math.random() * 500 + 100;
 var ponke3Ancho = 50;
 var ponke3Alto = 50;
 
@@ -47,8 +47,8 @@ var ponke3Alto = 50;
 
 //fin ponke
 
-var maloX = 130;
-var maloY = 340;
+var maloX = 900;
+var maloY = Math.random() * 500 + 25;
 var maloAncho = 60;
 var maloAlto = 60;
 
@@ -201,43 +201,57 @@ if(playerX>= caja2X-caja2Ancho/2 && playerX <= caja2X+caja2Ancho/2 && playerY+pl
 	
 ///ponke ///
 	image(ponke, ponkeX, ponkeY, ponkeAncho, ponkeAlto);
- if(playerX >= ponkeX-ponkeAncho/2 && playerX <= ponkeX+ponkeAncho/2 && 
-		playerY >= ponkeY-ponkeAlto/2 && playerY <= ponkeY+ponkeAlto/2){
+	ponkeX -= 2
+ if(playerX >= ponkeX-ponkeAncho && playerX <= ponkeX+ponkeAncho && 
+		playerY >= ponkeY-ponkeAlto && playerY <= ponkeY+ponkeAlto){
 	// 
 score = score+1;
 timeLimit = timeLimit +5;
 	 ponkeX = -10000;
-}//colision ponke
+} else if (ponkeX <= 0) {
+	ponkeX = 850
+}
+
+//colision ponke
 	//fin ponke//
 
 ///ponke2 ///
 image(ponke2, ponke2X, ponke2Y, ponke2Ancho, ponke2Alto);
-if(playerX >= ponke2X-ponke2Ancho/2 && playerX <= ponke2X+ponke2Ancho/2 && 
-	   playerY >= ponke2Y-ponke2Alto/2 && playerY <= ponke2Y+ponke2Alto/2){
+ponke2X -= 2
+if(playerX >= ponke2X-ponke2Ancho && playerX <= ponke2X+ponke2Ancho && 
+	   playerY >= ponke2Y-ponke2Alto && playerY <= ponke2Y+ponke2Alto){
    // 
 score = score+1;
 timeLimit = timeLimit +5;
 	ponke2X = -10000;
-}//colision ponke
+ } else if (ponke2X <= 0) {
+	ponke2X = 830
+}
+//colision ponke
    //fin ponke2//
 
 
  ///ponke3 ///
 image(ponke3, ponke3X, ponke3Y, ponke3Ancho, ponke3Alto);
-if(playerX >= ponke3X-ponke3Ancho/2 && playerX <= ponke3X+ponke3Ancho/2 && 
-	   playerY >= ponke3Y-ponke3Alto/2 && playerY <= ponke3Y+ponke3Alto/2){
+ponke3X -= 2
+if(playerX >= ponke3X-ponke3Ancho && playerX <= ponke3X+ponke3Ancho && 
+	   playerY >= ponke3Y-ponke3Alto && playerY <= ponke3Y+ponke3Alto){
    // 
 score = score+1;
 timeLimit = timeLimit +5;
 	ponke3X = -10000;
-}//colision ponke
+} else if (ponke3X <= 0) {
+	ponke3X = 870
+}
+//colision ponke
    //fin ponke2//  
 
 	
 	//////////////
 ///////malo//////	
 	image(malo, maloX, maloY, maloAncho, maloAlto);
-	
+	maloX -= 7
+	maloY += 2
 	 if(playerX >= maloX-maloAncho && playerX <= maloX+maloAncho && 
 		playerY >= maloY-maloAlto && playerY <= maloY+maloAlto){
 		 
